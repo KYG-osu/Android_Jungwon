@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">노인요양원정원</string>
+
+    <!--Test Ids-->
+    <string name="app_open_ad_id_test">ca-app-pub-3940256099942544/3419835294</string>
+    <string name="banner_ad_id_test">ca-app-pub-3940256099942544/6300978111</string>
+
+    <!--Live Ids-->
+    <string name="app_open_ad_id_live">ca-app-pub-3325440941543401/5954580041</string>
+    <string name="banner_ad_id_live">ca-app-pub-3325440941543401/3028530191</string>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gosu.jungwon.MainActivity">
+
+    <!-- WebView의 아래쪽을 adView의 위쪽에 맞춥니다.
+    layout_height attribute should be defined 이라는 오류는 높이와 너비를 설정해줘야한다는 의미
+    따라서 0dp로 설정해둠
+    배너 사이즈 : https://developers.google.com/admob/android/banner?hl=ko#banner_sizes
+    W/Ads: Not enough space to show ad. Needs 320x50 dp
+    MY UnitID : ca-app-pub-3325440941543401/3028530191
+    테스트용 UnitID : 3940256099942544/6300978111
+    weight : 공간의 비율
+    -->
+    <!--Banner Ad-->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:adSize="BANNER"
+        app:adUnitId="@string/banner_ad_id_live"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent "></com.google.android.gms.ads.AdView>
+
+    <com.ramotion.circlemenu.CircleMenuView
+        android:id="@+id/circle_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:button_colors="@array/colors"
+        app:button_icons="@array/icons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf = "parent"
+        app:layout_constraintBottom_toTopOf = "@id/adView"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintEnd_toEndOf = "parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+        LinearLayout은 orientation 속성을 지정하지 않으면 기본적으로 수평(horizontal)
+        방향으로 자식 뷰들을 배치합니다. 따라서 동적으로 자식 뷰를 추가할 때 예상치 못한 배치 결과가 나올 수 있습니다.
+    -->
+
